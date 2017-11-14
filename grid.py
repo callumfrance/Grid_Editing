@@ -43,14 +43,29 @@ def read_file(filename):
 
 # Write a grid of characters to a java file
 def write_java_file(in_file_name, grid):
+    filename = ""           # The name of the file e.g. Test.java
+    # in_file_name          # The name cpitalized e.g. Test
+    var_name = ""           # The name lowercase e.g. test
+    run = False
+
+    if "." in in_file_name:
+        in_file_name = (in_file_name.split('.'))[0] # in case entered test.java
+        print("Found a .")
+        input(">>")
+        run = True
+
+    print(run)
+    print(in_file_name)
+    input(">>>>")
     in_file_name = to_uppercase(in_file_name)
+    var_name = to_lowercase(in_file_name)
     filename = in_file_name + ".java"
     write_file = open(filename, 'w')
 
     write_file.write(a)
     write_file.write(in_file_name)
     write_file.write(b)
-    write_file.write(to_lowercase(in_file_name))
+    write_file.write(var_name)
     write_file.write(c)
 
     k = 0

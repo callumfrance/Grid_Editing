@@ -22,7 +22,7 @@ while not toExit:
     write_java_file(write_filename, in_grid)
     print("File has been written")
 
-    if write_filename != "exit" or read_filename != "exit":
+    if write_filename == "exit" or read_filename == "exit":
         toExit = True
     else:
         print("Invalid command")
