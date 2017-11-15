@@ -2,21 +2,14 @@ Grid_Editing
 ------------
 
 ## What?
-Grid editing allows the creation of simple grids from the console.
-Starting from the top left and working its way right and then down
-by default, a grid is entered one character cell at a time.
-Alternatively, by using the arrow keys, you can change the cursors'
-position in the 'grid' as the point in the grid to edit.
+Making 'char' grids in code is boring and annoying. 
+Dammit, I don't want to spend all this time writing out
+quotations and commas, and formatting it nicely.
 
-The grid should then be able to be exported as a code document.
 
-The code should be able to read in a grid of characters and spit
-out a code document featuring the grid.
-
-# Why?
-Making grids can be tedious and boring, and reading them can be
-even more of a pain. This program allows for the seamless transition
-of making, and then using grids.
+How good would it be if all you had to do was type out your
+character grid into a text document, and it is converted into
+a python/java variable for you?
 
 
 
