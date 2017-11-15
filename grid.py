@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import os.path
+
 ''' java '''
 a = "public class " # Name
 b = "{\n\tpublic char[][] " # name
@@ -57,7 +59,10 @@ def write_java_file(in_file_name, grid):
 
     in_file_name = to_uppercase(in_file_name)
     var_name = to_lowercase(in_file_name)
-    filename = in_file_name + ".java"
+    # filename = in_file_name + ".java"
+    if not os.path.exists('java_output/'):
+        os.makedirs('java_output/')
+    filename = os.path.join('java_output/', in_file_name+".java")
     write_file = open(filename, 'w')
 
     write_file.write(a)
@@ -104,7 +109,10 @@ def write_python_file(in_file_name, grid):
 
     in_file_name = to_uppercase(in_file_name)
     var_name = to_lowercase(in_file_name)
-    filename = in_file_name + ".py"
+    # filename = in_file_name + ".py"
+    if not os.path.exists('python_output/'):
+        os.makedirs('python_output/')
+    filename = os.path.join('python_output/', in_file_name+".py")
     write_file = open(filename, 'w')
 
     write_file.write(a2)
