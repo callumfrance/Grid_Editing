@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 
+''' java '''
 a = "public class " # Name
 b = "{\n\tpublic char[][] " # name
 c = " = {\n"
 # The actual grid items
 d = "\t};\n}"
+
+''' python '''
+a2 = '#!/usr/bin/python3\n\n'
 
 write_file = None
 
@@ -50,13 +54,7 @@ def write_java_file(in_file_name, grid):
 
     if "." in in_file_name:
         in_file_name = (in_file_name.split('.'))[0] # in case entered test.java
-        print("Found a .")
-        input(">>")
-        run = True
 
-    print(run)
-    print(in_file_name)
-    input(">>>>")
     in_file_name = to_uppercase(in_file_name)
     var_name = to_lowercase(in_file_name)
     filename = in_file_name + ".java"
@@ -92,5 +90,46 @@ def write_java_file(in_file_name, grid):
             write_file.write("\n")
 
     write_file.write(d)
+
+    write_file.close()
+
+# Write to a python file
+def write_python_file(in_file_name, grid):
+    filename = ""
+    # in_file_name
+    var_name = ""
+
+    if "." in in_file_name:
+        in_file_name = (in_file_name.split('.'))[0] # in case entered test.java
+
+    in_file_name = to_uppercase(in_file_name)
+    var_name = to_lowercase(in_file_name)
+    filename = in_file_name + ".py"
+    write_file = open(filename, 'w')
+
+    write_file.write(a2)
+    write_file.write(var_name)
+    write_file.write(" = [ \\\n")
+
+    k = 0
+
+    # loop through all the grid items
+    for row in grid:
+        j = 0
+
+        write_file.write("    [")
+        for item in row:
+            j = j + 1
+            if j != len(row):
+                write_file.write(item)
+                write_file.write(", ")
+            else:
+                write_file.write("]")
+
+        if k != len(grid) - 1:
+            write_file.write(", \\\n")
+            k = k + 1
+        else:
+            write_file.write(" ]")
 
     write_file.close()
